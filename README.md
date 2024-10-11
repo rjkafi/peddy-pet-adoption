@@ -9,11 +9,11 @@ Peddy is a user-friendly pet adoption platform designed to bring families and th
 - Responsive Design: The platform is designed to work seamlessly across all devices, whether it’s on mobile, tablet, or desktop.
 - Contact Information & Opening Hours: Easy access to Peddy’s location, contact information, and business hours.
 ### ES6 Features Used
--Arrow Functions: Simplified function syntax for handling UI interactions and data processing.
--Template Literals: Used for constructing dynamic content within the UI, such as pet details and contact information.
--Destructuring Assignment: Employed for extracting data from API responses or state objects to handle pet details effectively.
--Modules: Code is organized into different modules for better maintainability and separation of concerns.
--Promises & Async/Await: Used for handling asynchronous API requests, ensuring smooth data loading and user interactions.
+- Arrow Functions: Simplified function syntax for handling UI interactions and data processing.
+- Template Literals: Used for constructing dynamic content within the UI, such as pet details and contact information.
+- Destructuring Assignment: Employed for extracting data from API responses or state objects to handle pet details effectively.
+- Modules: Code is organized into different modules for better maintainability and separation of concerns.
+- Promises & Async/Await: Used for handling asynchronous API requests, ensuring smooth data loading and user interactions.
 ## Github Repo Link : https://github.com/rjkafi/peddy-pet-adoption
-## live Link : https://my-assignments-peddy-6.surge.sh/
+## Live Link : https://my-assignments-peddy-6.surge.sh/
 
