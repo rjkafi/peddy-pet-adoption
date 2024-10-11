@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <!-- Google font's -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/285d4c1eda.js" crossorigin="anonymous"></script>
+    <!-- DaisyUI & Tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'btn': '#0E7A81'
+              },
+             fontFamily: {
+                lato: ['Lato'],
+            }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="font-lato">
+    <!-- Navbar Start's -->
+     <nav class="container mx-auto py-3">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                  <li><a>Home</a></li>
+                  <li><a>Shop</a></li>
+                  <li><a>Contact</a></li>
+                </ul>
+              </div>
+              <!-- logo -->
+              <a class=" flex items-center gap-1 text-2xl font-black"><img src="./images/logo.webp" alt=""> Peddy</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li class=" text-gray-600"><a>Home</a></li>
+                <li class=" text-gray-600"><a>Shop</a></li>
+                <li class=" text-gray-600"><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a class="btn rounded-full"><i class="fa-regular fa-user text-xl"></i></a>
+            </div>
+          </div>
+     </nav>
+      <!-- Navbar End's -->
+    <!-- Banner section start's -->
+     <section class="flex flex-col justify-center items-center p-3 text-center space-y-7">
+      <h4 class="text-slate-400 text-2xl font-bold">Bringing Families Together ❤️‍🔥 
+      </h4>
+      <h2 class="text-black text-6xl font-black">Your Path to Adoption <br> Starts Here</h2>
+      <p class="px-4 text-center">Finding the perfect pet to welcome into your family is a beautiful journey.Browse <br> through our list of pets waiting for a family like yours. At Peddy,  we make  it  easier for <br> you to adopt, ensuring that every pet finds a loving home.</p>
+      <a href="#main"><button  class="btn bg-btn text-white">View More</button></a>
+      <div>
+          <img  src="./images/pet.webp" alt="">
+      </div>
+   </section>
+  <!-- Banner section end's -->
+   
+     <main id="main" class="container mx-auto">
+    
+     <!-- Adopt best friend section start's -->
+      <section class=" p-4 space-y-10">
+        <!-- title & description -->
+         <div class="flex flex-col justify-center items-center  text-center space-y-5">
+            <h3 class="text-4xl font-black">Adopt  Your  Best Friend</h3>
+            <p>Ready to welcome unconditional love into your home? Browse through our list of pets waiting <br> for a family like yours. Peddy is here to help you meet your perfect companion.</p>
+         </div>
+         <!-- Category buttons -->
+         <div id="categories" class=" grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4  p-2">
+            
+         </div>
+         <!-- Sort Button -->
+          <div class="flex justify-between items-center">
+            <div><h4 class="text-2xl font-black">Best Deal For you</h4></div>
+            <div><button id="sort-btn" class="btn bg-btn text-white text-xl font-bold">Sort by Price</button></div>
+          </div>
+      </section>
+      <!-- Dynamic posts section -->
+  <section class="container mx-auto  my-4 lg:my-2">
+   <!-- show modal count down when adopt btn clicked -->
+    <dialog id="my_modal_2" class="modal">
+      <div class="modal-box flex flex-col justify-end items-center" id="adoptionModal">
+        <img class="w-12 h-12" src="https://img.icons8.com/?size=96&id=kRZicCB1E8B8&format=gif" alt="">
+            <h2 id="modalCongratsText" class="text-2xl font-bold mb-4">Congrats</h2>
+            <p>Adoption Process is start for your pet</p>
+            <p id="modalCountdown" class="text-3xl font-bold">3</p>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+    <div class=" lg:flex gap-3 justify-center items-start p-3 min-h-svh">
+        
+        <!--<<<<==== posts card left-container -->
+      <div id="left-post-container">
+        <!-- ====>>>>>>dynamic post image Right-container -->
+      </div>
+      <div id="selectPetContainer" class="lg:w-2/5 border rounded-md  grid  grid-cols-2  gap-2  p-2">
+         
+      </div>
+    </div>
+  </section>
+     <!-- Adopt section end's -->
+</main>
+
+<dialog id="modalContainer" class="modal  sm:modal-middle p-2">
+  <div class="modal-box">
+    <div id="modalContent"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Cancle</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<!-- footer section start -->
+  <footer class="footer bg-neutral text-neutral-content p-10">
+    <nav>
+      <!-- logo -->
+      <a class=" flex items-center gap-1 text-2xl font-black"><img src="./images/logo.webp" alt=""> Peddy</a>
+      <p>Location: av. Washington 165, NY CA </p>
+      <p>54003</p>
+      <p>Phone: +31 85 964 47 25</p>
+      <p>Email: info@yourdomain.com</p>
+      <p>Openings hours: 9.00 AM - 5.00 PM</p>
+      <div class="flex justify-evenly items-center gap-3">
+        <a href=""><img class="w-10 h-10" src="https://img.icons8.com/?size=96&id=uLWV5A9vXIPu&format=png" alt=""></a>
+        <a href=""><img class="w-10 h-10" src="https://img.icons8.com/?size=96&id=cMRBi0rI3iwb&format=png" alt=""></a>
+        <a href=""><img class="w-10 h-10" src="https://img.icons8.com/?size=96&id=9a46bTk3awwI&format=png" alt=""></a>
+        <a href=""><img class="w-10 h-10" src="https://img.icons8.com/?size=96&id=Xy10Jcu1L2Su&format=png" alt=""></a>
+      </div>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Useful Links</h6>
+      <a class="link link-hover">Home</a>
+      <a class="link link-hover">About us</a>
+      <a class="link link-hover">Animals</a>
+      <a class="link link-hover">Fundation</a>
+      <a class="link link-hover">Contact</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Drop a Massage</h6>
+      <form class="space-y-3">
+            <input
+              type="text"
+              placeholder="Enter your Email"
+              class="input input-bordered " /> <br>
+            <button class="btn bg-btn w-full text-white ">Subscribe</button>
+          
+        </fieldset>
+      </form>
+    </nav>
+  </footer>        
+ <script src="./js/script.js"></script>
+ <script src="./js/sort.js"></script>   
+</body>
+</html>
